@@ -10,3 +10,8 @@ USING to_timestamp(starttime, 'YYYY-MM-DD HH24:MI:SS');
 --Update productprice (divided by 1,000,000)
 UPDATE allsessions 
 SET productprice = productprice/1000000
+
+--Update city column 
+UPDATE allsessions 
+SET city = null
+WHERE city = 'not available in demo dataset' OR city = '(not set)'

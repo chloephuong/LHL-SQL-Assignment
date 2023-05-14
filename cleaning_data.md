@@ -7,6 +7,7 @@ Queries:
 Below, provide the SQL queries you used to clean your data.
 
 For allsessions table
+
 --Convert Unix timestamps to timestamps
 UPDATE allsessions
 SET time = to_timestamp(time::bigint);

@@ -3,6 +3,8 @@ What issues will you address by cleaning the data?
 
 2. Some of the columns such as productprice and unitprice, their values needed to be divided by 1,000,000 as the values are too unrealistic for product or unit price.
 
+3. I also changed the value of some not available value input into 'null'
+
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
@@ -30,6 +32,16 @@ USING to_timestamp(starttime, 'YYYY-MM-DD HH24:MI:SS');
 UPDATE allsessions 
 
 SET productprice = productprice/1000000
+
+
+--Update city column 
+
+UPDATE allsessions 
+
+SET city = null
+
+WHERE city = 'not available in demo dataset' OR city = '(not set)'
+
 
 For analytics table
 

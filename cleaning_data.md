@@ -8,31 +8,50 @@ Below, provide the SQL queries you used to clean your data.
 
 For allsessions table
 
+
 --Convert Unix timestamps to timestamps
 
 UPDATE allsessions
+
 SET time = to_timestamp(time::bigint);
+
 
 --Change data type for column time from text to timestamps
 
 ALTER TABLE allsessions
+
 ALTER COLUMN time TYPE timestamp 
+
 USING to_timestamp(starttime, 'YYYY-MM-DD HH24:MI:SS');
 
+
 --Update productprice (divided by 1,000,000)
+
 UPDATE allsessions 
+
 SET productprice = productprice/1000000
 
 For analytics table
+
+
 --Convert Unix timestamps to timestamps
+
 UPDATE analytics 
+
 SET visitstarttime = to_timestamp(visitstarttime::bigint);
 
+
 --Change data type for column visitstarttime from text to timestamps
+
 ALTER TABLE analytics
+
 ALTER COLUMN visitstarttime TYPE timestamp 
+
 USING to_timestamp(visitstarttime, 'YYYY-MM-DD HH24:MI:SS');
 
+
 --Update unit price (unit cost) as it suggested should be divided by 1,000,000
+
 UPDATE analytics 
+
 SET unitprice = unitprice/1000000

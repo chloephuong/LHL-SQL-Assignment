@@ -6,3 +6,7 @@ SET time = to_timestamp(time::bigint);
 ALTER TABLE allsessions
 ALTER COLUMN time TYPE timestamp 
 USING to_timestamp(starttime, 'YYYY-MM-DD HH24:MI:SS');
+
+--Update productprice (divided by 1,000,000)
+UPDATE allsessions 
+SET productprice = productprice/1000000

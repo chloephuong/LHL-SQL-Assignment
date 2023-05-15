@@ -1,19 +1,9 @@
---What is the average number of products ordered from visitors in each city?
-SELECT  city,
+--What is the average number of products ordered from visitors in each city and country?
+SELECT  city, country,
 		ROUND(AVG(orderedquantity)) as avg_productordered
 FROM allsessions as a
 JOIN products as p
 ON a.productsku=p.sku
-WHERE city is not null
-GROUP BY city
-ORDER BY ROUND(AVG(orderedquantity)) DESC
-
---What is the average number of products ordered from visitors in each country?
-SELECT  country,
-		ROUND(AVG(orderedquantity)) as avg_productordered
-FROM allsessions as a
-JOIN products as p
-ON a.productsku=p.sku
-WHERE country is not null
-GROUP BY country
+WHERE country IS NOT null AND city IS NOT null
+GROUP BY city, country
 ORDER BY ROUND(AVG(orderedquantity)) DESC

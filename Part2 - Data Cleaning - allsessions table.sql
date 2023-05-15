@@ -19,3 +19,11 @@ WHERE city = 'not available in demo dataset' OR city = '(not set)'
 --Drop/Delete productrefundamount column because it offers no value
 ALTER TABLE allsessions
 DROP COLUMN productrefundamount
+
+--Drop/Delete itemquantity column because it offers no value
+ALTER TABLE allsessions
+DROP COLUMN itemquantity
+
+--Drop/Delete itemrevenue column because it offers no value
+ALTER TABLE allsessions
+DROP COLUMN itemrevenue

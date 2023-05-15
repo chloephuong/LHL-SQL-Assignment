@@ -53,6 +53,18 @@ The result showed there are total of 15115 unique products viewed by each visito
 
 Question 5: 
 
+Compute the percentage of visitors to the site that actually makes a purchase
+
 SQL Queries:
 
-Answer:
+SELECT COUNT(DISTINCT fullvisitorid) AS total_visitors,
+       
+       COUNT(DISTINCT CASE WHEN unitsold > 0 THEN fullvisitorid END) AS visitors_with_purchase,
+       
+       100 * COUNT(DISTINCT CASE WHEN unitsold > 0 THEN fullvisitorid END) / COUNT(DISTINCT fullvisitorid) AS purchase_conversion_rate
+
+FROM analytics
+
+Answer: 
+
+The conversion rate is 13%

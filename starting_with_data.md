@@ -18,7 +18,8 @@ Question 2:
 Find the total number of unique visitors
 
 SQL Queries:
-```SELECT COUNT(DISTINCT fullvisitorid) AS unique_visitors
+```
+SELECT COUNT(DISTINCT fullvisitorid) AS unique_visitors
 FROM allsessions
 ```
 

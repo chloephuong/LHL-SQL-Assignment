@@ -2,7 +2,7 @@
 SELECT fullvisitorid, COUNT(*)
 FROM allsessions
 GROUP BY fullvisitorid
-HAVING COUNT(*) > 1;
+HAVING COUNT(*) > 1
 
 --Find the total number of unique visitors
 SELECT COUNT(DISTINCT fullvisitorid) AS unique_visitors

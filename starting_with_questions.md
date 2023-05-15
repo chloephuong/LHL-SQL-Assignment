@@ -60,7 +60,7 @@ ORDER BY ROUND(AVG(orderedquantity)) DESC
 ```
 
 Answer:
-The result showed 268 rows with top 1 is Council Bluffs from the United States with the average product ordered amount of 7589.
+The result showed 401 rows with top 1 is Council Bluffs from the United States with the average product ordered amount of 7589.
 
 
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**

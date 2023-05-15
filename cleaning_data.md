@@ -5,6 +5,12 @@ What issues will you address by cleaning the data?
 
 3. I also changed the value of some not available value input into 'null'
 
+4. I deleted/droped columns because they offer no value at all
+
+- userid column in analytics table
+- productrefundamount column, itemquantity column, itemrevenue column is allsessions 
+
+
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
@@ -43,6 +49,27 @@ SET city = null
 WHERE city = 'not available in demo dataset' OR city = '(not set)'
 
 
+--Drop/Delete productrefundamount column because it offers no value
+
+ALTER TABLE allsessions
+
+DROP COLUMN productrefundamount
+
+
+--Drop/Delete itemquantity column because it offers no value
+
+ALTER TABLE allsessions
+
+DROP COLUMN itemquantity
+
+
+--Drop/Delete itemrevenue column because it offers no value
+
+ALTER TABLE allsessions
+
+DROP COLUMN itemrevenue
+
+
 For analytics table
 
 
@@ -67,3 +94,9 @@ USING to_timestamp(visitstarttime, 'YYYY-MM-DD HH24:MI:SS');
 UPDATE analytics 
 
 SET unitprice = unitprice/1000000
+
+--Drop/Delete userid column because it offers no value
+
+ALTER TABLE analytics
+
+DROP COLUMN userid

@@ -1,12 +1,18 @@
-Question 1: Find duplicate fullvisitorid records in allsessions table
+Question 1: 
+Find duplicate fullvisitorid records in allsessions table
 
 SQL Queries:
+
 SELECT fullvisitorid, COUNT(*)
+
 FROM allsessions
+
 GROUP BY fullvisitorid
+
 HAVING COUNT(*) > 1
 
 Answer: 
+
 There are 794 fullvisitorid that are duplicated at least 2 times
 
 

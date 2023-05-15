@@ -47,13 +47,20 @@ For Cities, the result showed up for 19 cities with San Francisco ranked top 1
 
 
 SQL Queries:
-
-
+```
+--What is the average number of products ordered from visitors in each city and country?
+SELECT  city, country,
+		ROUND(AVG(orderedquantity)) as avg_productordered
+FROM allsessions as a
+JOIN products as p
+ON a.productsku=p.sku
+WHERE country IS NOT null OR city IS NOT null
+GROUP BY city, country
+ORDER BY ROUND(AVG(orderedquantity)) DESC
+```
 
 Answer:
-
-
-
+The result showed 268 rows with top 1 is Council Bluffs from the United States with the average product ordered amount of 7589.
 
 
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
@@ -73,13 +80,56 @@ Answer:
 
 
 SQL Queries:
-
-
+```
+--What is the top-selling product from each city? 
+SELECT  sku,
+		productname,
+		city,
+		orderedquantity
+FROM (
+	SELECT
+		p.sku,
+		p.name as productname,
+		a.city,
+		SUM(orderedquantity) as orderedquantity,
+		ROW_NUMBER() OVER (PARTITION BY city ORDER BY SUM(orderedquantity) DESC) as rn
+	FROM allsessions as a
+	JOIN products as p
+	ON a.productsku=p.sku
+	WHERE city IS NOT null
+	GROUP BY p.sku, a.city, p.name
+	ORDER BY SUM(orderedquantity) DESC) as subquery
+WHERE rn = 1
+```
+```
+--What is the top-selling product from each country? 
+SELECT  sku,
+		productname,
+		country,
+		orderedquantity
+FROM (
+	SELECT
+		p.sku,
+		p.name as productname,
+		a.country,
+		SUM(orderedquantity) as orderedquantity,
+		ROW_NUMBER() OVER (PARTITION BY country ORDER BY SUM(orderedquantity) DESC) as rn
+	FROM allsessions as a
+	JOIN products as p
+	ON a.productsku=p.sku
+	WHERE country IS NOT null
+	GROUP BY p.sku, a.country, p.name
+	ORDER BY SUM(orderedquantity) DESC) as subquery
+WHERE rn = 1
+```
 
 Answer:
 
+For cities, result showed 250 rows with top 1 is Kick Ball - city Mountain View with ordered quantity of 75850
 
+For countries, result showed 134 rows with top 1 is Kick Ball - United Stated with ordered quantity of 409590
 
+The pattern...
 
 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**

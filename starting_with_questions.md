@@ -54,7 +54,7 @@ SELECT  city, country,
 FROM allsessions as a
 JOIN products as p
 ON a.productsku=p.sku
-WHERE country IS NOT null AND city IS NOT null
+WHERE country IS NOT null OR city IS NOT null
 GROUP BY city, country
 ORDER BY ROUND(AVG(orderedquantity)) DESC
 ```

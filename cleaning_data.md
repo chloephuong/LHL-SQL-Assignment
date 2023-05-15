@@ -5,6 +5,8 @@ What issues will you address by cleaning the data?
 
 3. I also changed the value of some not available value input into 'null'
 
+4. I deleted/droped userid column in analytics table because it offers no value at all
+
 Queries:
 Below, provide the SQL queries you used to clean your data.
 
@@ -67,3 +69,9 @@ USING to_timestamp(visitstarttime, 'YYYY-MM-DD HH24:MI:SS');
 UPDATE analytics 
 
 SET unitprice = unitprice/1000000
+
+--Drop/Delete userid column because it offers no value
+
+ALTER TABLE analytics
+
+DROP COLUMN userid

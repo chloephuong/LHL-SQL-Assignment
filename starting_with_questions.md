@@ -103,17 +103,16 @@ FROM (
 		p.name as productname,
 		a.city,
 		SUM(orderedquantity) as orderedquantity,
-		ROW_NUMBER() OVER (PARTITION BY city ORDER BY SUM(orderedquantity) DESC) as rn
+		RANK() OVER (PARTITION BY city ORDER BY SUM(orderedquantity) DESC) as rnk
 	FROM allsessions as a
 	JOIN products as p
 	ON a.productsku=p.sku
 	WHERE city IS NOT null
 	GROUP BY p.sku, a.city, p.name
 	ORDER BY SUM(orderedquantity) DESC) as subquery
-WHERE rn = 1
+WHERE rnk = 1
 ```
 ```
---What is the top-selling product from each country? 
 SELECT  sku,
 		productname,
 		country,
@@ -124,14 +123,14 @@ FROM (
 		p.name as productname,
 		a.country,
 		SUM(orderedquantity) as orderedquantity,
-		ROW_NUMBER() OVER (PARTITION BY country ORDER BY SUM(orderedquantity) DESC) as rn
+		RANK() OVER (PARTITION BY country ORDER BY SUM(orderedquantity) DESC) as rnk
 	FROM allsessions as a
 	JOIN products as p
 	ON a.productsku=p.sku
 	WHERE country IS NOT null
 	GROUP BY p.sku, a.country, p.name
 	ORDER BY SUM(orderedquantity) DESC) as subquery
-WHERE rn = 1
+WHERE rnk = 1
 ```
 
 Answer:

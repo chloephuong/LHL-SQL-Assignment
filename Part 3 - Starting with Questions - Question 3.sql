@@ -9,4 +9,4 @@ FROM (
 WHERE country IS NOT null 
 OR city IS NOT null
 GROUP BY country, city, category
-
+HAVING category NOT IN ('(not set)')

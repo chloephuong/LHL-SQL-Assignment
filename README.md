@@ -13,11 +13,13 @@ In this SQL project, my goals are to improve my SQL knowledge and  experience wi
 ### Step 1
 I took time to carefully read through the assignment and its requirements. I also previewed all of the provided materials and the Evaluation Rubric to make sure my approach to this assignment is on the right path and meets the expectation.
 ### Step 2
-Started my assignment with the installaion process and setting up 
+Started my assignment with the installation process and setting up 
   - Clone repo to my local device
   - Download files
   - Run test query and commit/push test file to Github through Github Deskstop
   - Create all of the required tables with their columns and assigning data types
+ ### Step 3
+ I started with Part 2 - Data Cleaning 
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)

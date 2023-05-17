@@ -5,7 +5,7 @@ What issues will you address by cleaning the data?
 
 3. I also changed the value of some not available value input into 'null'
 
-4. I deleted/droped columns because they offer no value at all
+4. I deleted/droped columns because they offer no attributes
 
 - userid column in analytics table
 - productrefundamount column, itemquantity column, itemrevenue column is allsessions 
@@ -37,6 +37,18 @@ SET productprice = productprice/1000000
 UPDATE allsessions 
 SET city = null
 WHERE city = 'not available in demo dataset' OR city = '(not set)'
+```
+```
+--Update country column 
+UPDATE allsessions 
+SET country = null
+WHERE country = '(not set)'
+```
+```
+--Update category column 
+UPDATE allsessions 
+SET v2productcategory = null
+WHERE v2productcategory = '(not set)'
 ```
 ```
 --Drop/Delete productrefundamount column because it offers no value

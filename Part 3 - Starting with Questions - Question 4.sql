@@ -37,6 +37,3 @@ FROM (
 	GROUP BY p.sku, a.country, p.name
 	ORDER BY SUM(orderedquantity) DESC) as subquery
 WHERE rnk = 1
-
-
---Can we find any pattern worthy of noting in the products sold?

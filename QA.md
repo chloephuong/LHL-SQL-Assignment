@@ -158,6 +158,7 @@ ORDER BY orderedquantity DESC
 ```
 
 Question 5: 
+```
 --Total revenue generated from each city
 	--Pick a random value of 'New York' and test
 SELECT city, SUM(totaltransactionrevenue) AS renvenue_generated
@@ -165,7 +166,8 @@ FROM allsessions AS a
 WHERE city = 'New York'
 GROUP BY a.city
 ORDER BY renvenue_generated DESC
-
+```
+```
 --Total revenue generated from each country
 	--Pick a random value of 'United States' and test
 SELECT country, SUM(totaltransactionrevenue) AS renvenue_generated
@@ -173,26 +175,30 @@ FROM allsessions AS a
 WHERE country = 'United States'
 GROUP BY a.country
 ORDER BY renvenue_generated DESC
+```
 
+QA Process for Part 4 - Starting with Data
 
---QA Process for Part 4 - Starting with Data
-
---Question 1: Find duplicate fullvisitorid records in allsessions table
-	--Pick a random value of visitotid as '5684903298881626743' and test
+Question 1: Find duplicate fullvisitorid records in allsessions table
+```
+--Pick a random value of visitotid as '5684903298881626743' and test
 SELECT fullvisitorid, COUNT(*) AS visitor_count
 FROM allsessions
 WHERE fullvisitorid = '5684903298881626743'
 GROUP BY fullvisitorid
 HAVING COUNT(*) > 1
-
---Question 2: Find the total number of unique visitors
+```
+Question 2: Find the total number of unique visitors
+```
 SELECT COUNT(*) AS unique_visitors
 FROM (
     SELECT DISTINCT fullvisitorid
     FROM allsessions
 ) AS subquery
+```
 
---Question 3: Find the total number of unique visitors by channel
+Question 3: Find the total number of unique visitors by channel
+```
 SELECT channelgrouping, COUNT(*) AS unique_visitors
 FROM (
     SELECT channelgrouping, fullvisitorid
@@ -201,8 +207,10 @@ FROM (
 ) AS subquery
 GROUP BY channelgrouping
 ORDER BY unique_visitors DESC
+```
 
---Question 4: Find each unique product viewed by each visitor
+Question 4: Find each unique product viewed by each visitor
+```
 SELECT DISTINCT fullvisitorid, productsku
 FROM (
     SELECT fullvisitorid, productsku, pageviews,
@@ -211,8 +219,10 @@ FROM (
 ) AS subquery
 WHERE row_num = 1
 ORDER BY fullvisitorid, productsku
+```
 
---Question 5: Compute the percentage of visitors to the site that actually makes a purchase
+Question 5: Compute the percentage of visitors to the site that actually makes a purchase
+```
 WITH total_visitors AS (
   SELECT COUNT(DISTINCT fullvisitorid) AS total_visitors
   FROM analytics
@@ -226,5 +236,5 @@ SELECT total_visitors.total_visitors,
        visitors_with_purchase.visitors_with_purchase,
        ROUND(100 * visitors_with_purchase.visitors_with_purchase::numeric / total_visitors.total_visitors::numeric) AS purchase_conversion_rate
 FROM total_visitors, visitors_with_purchase;
-
+```
 

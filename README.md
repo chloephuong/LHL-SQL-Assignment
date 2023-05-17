@@ -26,13 +26,14 @@ Started my assignment with the installation process and setting up
 5. Final step was to create the ERD and have the tables linked properly. Then creating and preparing for the presentation.
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+
 Based on the provided data and through all the queries I have created, below are some of what I learned about this database:
-  - Total revenue generated from each city:
+ 
+ - Total revenue generated from each city:
       + The query calculates the total transaction revenue for each city by summing the totaltransactionrevenue column. This information helps identify cities that contribute the most to revenue generation.
 
-Unique visitors with multiple visits:
-The query counts the number of distinct fullvisitorid values that appear more than once in the dataset. This information helps identify visitors who have made multiple visits to the site.
+  - Unique visitors with multiple visits:
+      + The query counts the number of distinct fullvisitorid values that appear more than once in the dataset. This information helps identify visitors who have made multiple visits to the site.
 
 Total number of unique visitors:
 The query counts the number of distinct fullvisitorid values in the dataset. This information provides an overall count of unique visitors to the site.

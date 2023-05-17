@@ -176,5 +176,28 @@ FROM (
 GROUP BY channelgrouping
 ORDER BY unique_visitors DESC
 
+--Question 4: Find each unique product viewed by each visitor
+SELECT DISTINCT fullvisitorid, productsku
+FROM (
+    SELECT fullvisitorid, productsku, pageviews,
+           ROW_NUMBER() OVER (PARTITION BY fullvisitorid, productsku ORDER BY pageviews) AS row_num
+    FROM allsessions
+) AS subquery
+WHERE row_num = 1
+ORDER BY fullvisitorid, productsku
 
+--Question 5: Compute the percentage of visitors to the site that actually makes a purchase
+WITH total_visitors AS (
+  SELECT COUNT(DISTINCT fullvisitorid) AS total_visitors
+  FROM analytics
+),
+visitors_with_purchase AS (
+  SELECT COUNT(DISTINCT fullvisitorid) AS visitors_with_purchase
+  FROM analytics
+  WHERE unitsold > 0
+)
+SELECT total_visitors.total_visitors,
+       visitors_with_purchase.visitors_with_purchase,
+       ROUND(100 * visitors_with_purchase.visitors_with_purchase::numeric / total_visitors.total_visitors::numeric) AS purchase_conversion_rate
+FROM total_visitors, visitors_with_purchase;
 

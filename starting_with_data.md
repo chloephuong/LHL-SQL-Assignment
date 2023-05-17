@@ -39,7 +39,7 @@ SELECT channelgrouping,
 		COUNT(DISTINCT fullvisitorid) AS unique_visitors	
 FROM allsessions
 GROUP BY channelgrouping
-ORDER BY ORDER BY unique_visitors DESC
+ORDER BY unique_visitors DESC
 ```
 
 Answer:

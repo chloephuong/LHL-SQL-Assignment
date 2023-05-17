@@ -19,7 +19,9 @@ Started my assignment with the installation process and setting up
   - Run test query and commit/push test file to Github through Github Deskstop
   - Create all of the required tables with their columns and assigning data types
  ### Step 3
- I started with Part 2 - Data Cleaning 
+1. I started with Part 2 - Data Cleaning. I managed to clean some of the data such as change data type, remove some columns that offer no value, manipulate some input values.
+2. Next I moved on to Part 3 - Start with Questions. I discussed with some of my peers and also follow the group chat along with the request-assistant chat box in Discord to help me have a better understanding for those questions, get tips from my peers and from there choosing the right approach to solve the questions.
+3. 
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)

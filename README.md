@@ -35,11 +35,11 @@ Based on the provided data and through all the queries I have created, below are
   - Unique visitors with multiple visits:
       + The query counts the number of distinct fullvisitorid values that appear more than once in the dataset. This information helps identify visitors who have made multiple visits to the site.
 
-Total number of unique visitors:
-The query counts the number of distinct fullvisitorid values in the dataset. This information provides an overall count of unique visitors to the site.
+  - Total number of unique visitors:
+      + The query counts the number of distinct fullvisitorid values in the dataset. This information provides an overall count of unique visitors to the site.
 
-Unique visitors by channel grouping:
-The query counts the number of distinct fullvisitorid values grouped by channelgrouping. This information helps analyze the distribution of unique visitors across different channels.
+  - Unique visitors by channel grouping:
+      + The query counts the number of distinct fullvisitorid values grouped by channelgrouping. This information helps analyze the distribution of unique visitors across different channels.
 
 Distinct visitor-product combinations with first view time:
 The query retrieves distinct combinations of fullvisitorid and productsku, considering the earliest pageviews value for each combination. This information helps identify the first time a visitor viewed a specific product.

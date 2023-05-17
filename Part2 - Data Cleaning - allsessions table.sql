@@ -16,6 +16,16 @@ UPDATE allsessions
 SET city = null
 WHERE city = 'not available in demo dataset' OR city = '(not set)'
 
+--Update country column 
+UPDATE allsessions 
+SET country = null
+WHERE country = '(not set)'
+
+--Update category column 
+UPDATE allsessions 
+SET v2productcategory = null
+WHERE v2productcategory = '(not set)'
+
 --Drop/Delete productrefundamount column because it offers no value
 ALTER TABLE allsessions
 DROP COLUMN productrefundamount

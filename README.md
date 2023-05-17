@@ -57,13 +57,9 @@ As someone who has no experience in coding before entering this boothcamp, i hav
 
   - Data Cleaning process: This process took me a lot of time since I'm still new to working with data and the provided database is quite messy and challenging to clean. I had a hard time to decide whether or not I have to get rid of a row/column for instant. Also, I'm still not quite familiar with the suitable data type for the data input.
 
-Data Understanding and Context: Working with unfamiliar data requires a good understanding of the dataset and its relationships. Interpreting the data correctly and aligning it with the intended analysis or question can be challenging.
+  - QA the queries: As mentioned, I found that the process of QA the queries meaning verifying the accuracy of query results and comparing them to expected outcomes is quite time-consuming and it took me a long time to come up with alternative queries.
 
-Query Testing and Verification: Verifying the accuracy of query results and comparing them to expected outcomes can be time-consuming. It involves running queries, inspecting the results, and ensuring they match the expected results.
-
-Query Complexity and Efficiency: As queries become more complex, it can be challenging to optimize them for efficiency and readability. Finding the right balance between complexity and maintainability is crucial.
-
-Troubleshooting and Debugging: When encountering errors or unexpected results, troubleshooting and debugging queries can be challenging. Identifying the root cause of the issue and making the necessary adjustments requires a systematic approach.
+  - Troubleshooting and Debugging: Many times when encountering errors or unexpected results, troubleshooting and debugging queries are also challenging for me. In these case I tried to spend some time on carefully review my code before consulting with my peers and seeking help from mentors.
 
 ## Future Goals
-(what would you do if you had more time?)
+If I had more time, definitely would go back and start doing data cleaning more as well as try to come up with more challenging quesions and solutions to practice and gain more SQL experience.

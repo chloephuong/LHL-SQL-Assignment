@@ -74,7 +74,8 @@ CREATE VIEW Q1_temp2 AS
 SELECT country, total_revenue1
 FROM Q1_temp1 JOIN Q1_temp2 USING (country)
 WHERE total_revenue1=total_revenue2
-
+```
+```
 --Which cities and countries have the highest level of transaction revenues on the site?
 CREATE VIEW Q1_temp3 AS
 	SELECT city, SUM(totaltransactionrevenue) AS total_revenue3
@@ -93,9 +94,11 @@ CREATE VIEW Q1_temp4 AS
 SELECT city, total_revenue3
 FROM Q1_temp3 JOIN Q1_temp4 USING (city)
 WHERE total_revenue3=total_revenue4
+```
 
---Question 2: What is the average number of products ordered from visitors in each city and country?
-	--Pick a random value of '3786' and test
+Question 2: What is the average number of products ordered from visitors in each city and country?
+```
+--Pick a random value of '3786' and test
 SELECT city, country, ROUND(AVG(orderedquantity)) AS avg_productordered
 FROM allsessions AS a
 JOIN products AS p ON a.productsku = p.sku
@@ -103,8 +106,10 @@ WHERE country IS NOT NULL OR city IS NOT NULL
 GROUP BY city, country
 HAVING ROUND(AVG(orderedquantity)) = 3786
 ORDER BY avg_productordered DESC;
+```
 
---Question 3: Product categories of products ordered from visitors in each city and country?
+Question 3: Product categories of products ordered from visitors in each city and country?
+```
 SELECT country, city, category
 FROM (
     SELECT a.city, a.country, a.v2productcategory AS category, p.orderedquantity
@@ -118,8 +123,10 @@ OR city IS NOT NULL
 GROUP BY country, city, category
 HAVING category NOT IN ('(not set)')
 ORDER BY country, city, category;
+```
 
---Question 4: 
+Question 4: 
+```
 --What is the top-selling product from each city?
 SELECT sku, productname, city, orderedquantity
 FROM (
@@ -133,7 +140,8 @@ FROM (
 ) AS rn
 WHERE rn = 1
 ORDER BY orderedquantity DESC
-
+```
+```
 --What is the top-selling product from each country?
 SELECT sku, productname, country, orderedquantity
 FROM (
@@ -147,8 +155,9 @@ FROM (
 ) AS t
 WHERE t.rn = 1
 ORDER BY orderedquantity DESC
+```
 
---Question 5: 
+Question 5: 
 --Total revenue generated from each city
 	--Pick a random value of 'New York' and test
 SELECT city, SUM(totaltransactionrevenue) AS renvenue_generated

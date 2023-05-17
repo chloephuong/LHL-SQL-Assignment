@@ -41,13 +41,13 @@ Based on the provided data and through all the queries I have created, below are
   - Unique visitors by channel grouping:
       + The query counts the number of distinct fullvisitorid values grouped by channelgrouping. This information helps analyze the distribution of unique visitors across different channels.
 
-Distinct visitor-product combinations with first view time:
-The query retrieves distinct combinations of fullvisitorid and productsku, considering the earliest pageviews value for each combination. This information helps identify the first time a visitor viewed a specific product.
+  - Distinct visitor-product combinations with first view time:
+      + The query retrieves distinct combinations of fullvisitorid and productsku, considering the earliest pageviews value for each combination. This information helps identify the first time a visitor viewed a specific product.
 
-Total visitors, visitors with a purchase, and purchase conversion rate:
-The query calculates the total number of unique visitors, the number of visitors who made a purchase (where unitsold > 0), and the purchase conversion rate as a percentage. This information helps analyze the effectiveness of converting visitors into customers.
+  - Total visitors, visitors with a purchase, and purchase conversion rate:
+      + The query calculates the total number of unique visitors, the number of visitors who made a purchase (where unitsold > 0), and the purchase conversion rate as a percentage. This information helps analyze the effectiveness of converting visitors into customers.
 
-To answer these questions, the provided SQL queries were used to retrieve and aggregate the necessary data from the allsessions and analytics tables. By analyzing the query results, insights can be gained regarding revenue generation, visitor behavior, conversion rates, and other relevant metrics.
+Based on the above information that we were able to pulled out from this database, I used the SQL queries to retrieve and aggregate the necessary data mostly from the allsessions and analytics tables. And by analyzing these query results, in the business environment, insights can be gained regarding revenue generation, visitor behavior, conversion rates, and other relevant metrics.
 
 ## Challenges 
 (discuss challenges you faced in the project)

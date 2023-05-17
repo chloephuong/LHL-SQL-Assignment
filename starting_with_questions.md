@@ -137,9 +137,7 @@ Answer:
 
 For cities, result showed 250 rows with top 1 is Kick Ball - city Mountain View with ordered quantity of 75850
 
-For countries, result showed 134 rows with top 1 is Kick Ball - United Stated with ordered quantity of 409590
-
-The pattern...
+For countries, result showed 135 rows with top 1 is Kick Ball - United Stated with ordered quantity of 409590
 
 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
@@ -168,6 +166,8 @@ ORDER BY SUM(TOTALTRANSACTIONREVENUE) DESC
 
 Answer:
 
+For cities, result showed 19 rows with San Francisco being top 1 
 
+For countries, result showed 5 rows: United States, Israel, Australia, Canada, and Switzerland.
 
 

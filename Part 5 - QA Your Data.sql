@@ -78,6 +78,7 @@ FROM Q1_temp3 JOIN Q1_temp4 USING (city)
 WHERE total_revenue3=total_revenue4
 
 --Question 2: What is the average number of products ordered from visitors in each city and country?
+	--Pick a random value of '3786' and test
 SELECT city, country, ROUND(AVG(orderedquantity)) AS avg_productordered
 FROM allsessions AS a
 JOIN products AS p ON a.productsku = p.sku
@@ -86,5 +87,94 @@ GROUP BY city, country
 HAVING ROUND(AVG(orderedquantity)) = 3786
 ORDER BY avg_productordered DESC;
 
---
+--Question 3: Product categories of products ordered from visitors in each city and country?
+SELECT country, city, category
+FROM (
+    SELECT a.city, a.country, a.v2productcategory AS category, p.orderedquantity
+    FROM allsessions AS a
+    JOIN products AS p
+    ON a.productsku = p.sku
+    WHERE orderedquantity > 0
+) AS subquery
+WHERE country IS NOT NULL AND country NOT IN ('(not set)')
+OR city IS NOT NULL
+GROUP BY country, city, category
+HAVING category NOT IN ('(not set)')
+ORDER BY country, city, category;
+
+--Question 4: 
+--What is the top-selling product from each city?
+SELECT sku, productname, city, orderedquantity
+FROM (
+    SELECT p.sku, p.name AS productname, a.city, SUM(p.orderedquantity) AS orderedquantity,
+        ROW_NUMBER() OVER (PARTITION BY a.city ORDER BY SUM(p.orderedquantity) DESC) AS rn
+    FROM allsessions AS a
+    JOIN products AS p
+    ON a.productsku = p.sku
+    WHERE a.city IS NOT NULL
+    GROUP BY p.sku, p.name, a.city
+) AS rn
+WHERE rn = 1
+ORDER BY orderedquantity DESC
+
+--What is the top-selling product from each country?
+SELECT sku, productname, country, orderedquantity
+FROM (
+    SELECT p.sku, p.name AS productname, a.country, SUM(orderedquantity) AS orderedquantity,
+        ROW_NUMBER() OVER (PARTITION BY a.country ORDER BY SUM(orderedquantity) DESC) AS rn
+    FROM allsessions AS a
+    JOIN products AS p
+    ON a.productsku = p.sku
+    WHERE a.country IS NOT NULL
+    GROUP BY p.sku, p.name, a.country
+) AS t
+WHERE t.rn = 1
+ORDER BY orderedquantity DESC
+
+--Question 5: 
+--Total revenue generated from each city
+	--Pick a random value of 'New York' and test
+SELECT city, SUM(totaltransactionrevenue) AS renvenue_generated
+FROM allsessions AS a
+WHERE city = 'New York'
+GROUP BY a.city
+ORDER BY renvenue_generated DESC
+
+--Total revenue generated from each country
+	--Pick a random value of 'United States' and test
+SELECT country, SUM(totaltransactionrevenue) AS renvenue_generated
+FROM allsessions AS a
+WHERE country = 'United States'
+GROUP BY a.country
+ORDER BY renvenue_generated DESC
+
+
+--QA Process for Part 4 - Starting with Data
+
+--Question 1: Find duplicate fullvisitorid records in allsessions table
+	--Pick a random value of visitotid as '5684903298881626743' and test
+SELECT fullvisitorid, COUNT(*) AS visitor_count
+FROM allsessions
+WHERE fullvisitorid = '5684903298881626743'
+GROUP BY fullvisitorid
+HAVING COUNT(*) > 1
+
+--Question 2: Find the total number of unique visitors
+SELECT COUNT(*) AS unique_visitors
+FROM (
+    SELECT DISTINCT fullvisitorid
+    FROM allsessions
+) AS subquery
+
+--Question 3: Find the total number of unique visitors by channel
+SELECT channelgrouping, COUNT(*) AS unique_visitors
+FROM (
+    SELECT channelgrouping, fullvisitorid
+    FROM allsessions
+    GROUP BY channelgrouping, fullvisitorid
+) AS subquery
+GROUP BY channelgrouping
+ORDER BY unique_visitors DESC
+
+
 

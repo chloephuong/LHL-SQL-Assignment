@@ -27,8 +27,7 @@ Started my assignment with the installation process and setting up
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
-Based on the provided data, here's a summary of the information and how it can be used to answer specific questions:
-
+Based on the provided data and through all the queries I have created, below are some of what I learned about this database:
   - Total revenue generated from each city:
       + The query calculates the total transaction revenue for each city by summing the totaltransactionrevenue column. This information helps identify cities that contribute the most to revenue generation.
 

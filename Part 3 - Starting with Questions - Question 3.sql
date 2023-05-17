@@ -6,7 +6,7 @@ FROM (
 	JOIN products AS p
 	ON a.productsku=p.sku
 	WHERE orderedquantity > 0 ) AS subquery
-WHERE country IS NOT null AND country NOT IN ('(not set)')
+WHERE country IS NOT null
 OR city IS NOT null
 GROUP BY country, city, category
-HAVING category NOT IN ('(not set)')
+HAVING category IS NOT null

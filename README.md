@@ -50,7 +50,20 @@ Based on the provided data and through all the queries I have created, below are
 Based on the above information that we were able to pulled out from this database, I used the SQL queries to retrieve and aggregate the necessary data mostly from the allsessions and analytics tables. And by analyzing these query results, in the business environment, insights can be gained regarding revenue generation, visitor behavior, conversion rates, and other relevant metrics.
 
 ## Challenges 
-(discuss challenges you faced in the project)
+
+As someone who has no experience in coding before entering this boothcamp, i have learned that I faced quite many challenges during this SQL assignment:
+
+  - Syntax and Query Structure: Choosing the right approach, remembering and applying the proper syntax and query structure for each of the problems/questions are quite challenging at first for me, especially for complex queries involving multiple tables, joins, aggregations, and window functions.
+
+  - Data Cleaning process: This process took me a lot of time since I'm still new to working with data and the provided database is quite messy and challenging to clean. I had a hard time to decide whether or not I have to get rid of a row/column for instant. Also, I'm still not quite familiar with the suitable data type for the data input.
+
+Data Understanding and Context: Working with unfamiliar data requires a good understanding of the dataset and its relationships. Interpreting the data correctly and aligning it with the intended analysis or question can be challenging.
+
+Query Testing and Verification: Verifying the accuracy of query results and comparing them to expected outcomes can be time-consuming. It involves running queries, inspecting the results, and ensuring they match the expected results.
+
+Query Complexity and Efficiency: As queries become more complex, it can be challenging to optimize them for efficiency and readability. Finding the right balance between complexity and maintainability is crucial.
+
+Troubleshooting and Debugging: When encountering errors or unexpected results, troubleshooting and debugging queries can be challenging. Identifying the root cause of the issue and making the necessary adjustments requires a systematic approach.
 
 ## Future Goals
 (what would you do if you had more time?)

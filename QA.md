@@ -6,9 +6,9 @@ During this task, I realized mistakes can be make anytime so I tried to create a
 
 QA Process:
 
-#QA Process for Part 2 - Data Cleaning
+QA Process for Part 2 - Data Cleaning
 
-##For allsessions table
+For allsessions table
 ```
 --Check data type for Time column
 SELECT data_type
@@ -32,25 +32,30 @@ SELECT column_name
 FROM information_schema.columns
 WHERE table_name = 'allsessions'
 ```
---For analytics table
+
+For analytics table
+```
 --Check data type for visitstarttime column
 SELECT data_type
 FROM information_schema.columns
 WHERE table_name = 'analytics' AND column_name = 'visitstarttime'
-
+```
+```
 --Check data input in unitprice column
 SELECT unitprice
 FROM analytics
-
+```
+```
 --Check if the columns are already dropped/deleted
 SELECT column_name
 FROM information_schema.columns
 WHERE table_name = 'analytics'
+```
 
+QA Process for Part 3 - Starting with Questions
 
---QA Process for Part 3 - Starting with Questions
-
---Question 1: 
+Question 1: 
+```
 --Which countries have the highest level of transaction revenues on the site?
 CREATE VIEW Q1_temp1 AS
 	SELECT country, SUM(totaltransactionrevenue) AS total_revenue1

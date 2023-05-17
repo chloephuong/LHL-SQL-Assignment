@@ -118,10 +118,10 @@ FROM (
     ON a.productsku = p.sku
     WHERE orderedquantity > 0
 ) AS subquery
-WHERE country IS NOT NULL AND country NOT IN ('(not set)')
+WHERE country IS NOT NULL
 OR city IS NOT NULL
 GROUP BY country, city, category
-HAVING category NOT IN ('(not set)')
+HAVING category IS NOT null
 ORDER BY country, city, category;
 ```
 

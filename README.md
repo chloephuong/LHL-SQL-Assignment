@@ -22,7 +22,8 @@ Started my assignment with the installation process and setting up
 1. I started with Part 2 - Data Cleaning. I managed to clean some of the data such as change data type, remove some columns that offer no value, manipulate some input values.
 2. Next I moved on to Part 3 - Start with Questions. I discussed with some of my peers and also follow the group chat along with the request-assistant chat box in Discord to help me have a better understanding for those questions, get tips from my peers and from there choosing the right approach to solve the questions.
 3. I tried to come up with simple but efficent questions and solutions for Part 4 - Start with Data. I found myself enjoying doing this task the most compared to the rest of the tasks in this SQL assignment.
-4. 
+4. The Part 5 - QA Your Data took me a long time to get through since I tried to create alternative queries or run test by pulling out result based on expected value for every single query that I create in this assignment.
+5. Final step was to create the ERD and have the tables linked properly. Then creating and preparing for the presentation.
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)

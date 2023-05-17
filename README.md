@@ -27,6 +27,27 @@ Started my assignment with the installation process and setting up
 
 ## Results
 (fill in what you discovered this data could tell you and how you used the data to answer those questions)
+Based on the provided data, here's a summary of the information and how it can be used to answer specific questions:
+
+  - Total revenue generated from each city:
+      + The query calculates the total transaction revenue for each city by summing the totaltransactionrevenue column. This information helps identify cities that contribute the most to revenue generation.
+
+Unique visitors with multiple visits:
+The query counts the number of distinct fullvisitorid values that appear more than once in the dataset. This information helps identify visitors who have made multiple visits to the site.
+
+Total number of unique visitors:
+The query counts the number of distinct fullvisitorid values in the dataset. This information provides an overall count of unique visitors to the site.
+
+Unique visitors by channel grouping:
+The query counts the number of distinct fullvisitorid values grouped by channelgrouping. This information helps analyze the distribution of unique visitors across different channels.
+
+Distinct visitor-product combinations with first view time:
+The query retrieves distinct combinations of fullvisitorid and productsku, considering the earliest pageviews value for each combination. This information helps identify the first time a visitor viewed a specific product.
+
+Total visitors, visitors with a purchase, and purchase conversion rate:
+The query calculates the total number of unique visitors, the number of visitors who made a purchase (where unitsold > 0), and the purchase conversion rate as a percentage. This information helps analyze the effectiveness of converting visitors into customers.
+
+To answer these questions, the provided SQL queries were used to retrieve and aggregate the necessary data from the allsessions and analytics tables. By analyzing the query results, insights can be gained regarding revenue generation, visitor behavior, conversion rates, and other relevant metrics.
 
 ## Challenges 
 (discuss challenges you faced in the project)

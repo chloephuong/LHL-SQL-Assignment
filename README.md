@@ -62,4 +62,11 @@ As someone who has no experience in coding before entering this boothcamp, i hav
   - Troubleshooting and Debugging: Many times when encountering errors or unexpected results, troubleshooting and debugging queries are also challenging for me. In these case I tried to spend some time on carefully review my code before consulting with my peers and seeking help from mentors.
 
 ## Future Goals
-If I had more time, definitely would go back and start doing data cleaning more as well as try to come up with more challenging quesions and solutions to practice and gain more SQL experience.
+If I had more time, definitely would go back and start doing data cleaning more
+
+  - Understand more about the data, tables and their relationships
+  - QA process - Testing by using calculation MIN MAX 
+  - Remove duplicates
+  - Locate primary and foreign keys
+  - Come up with more questions and solutions through the dataset
+
